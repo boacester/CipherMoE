@@ -1,0 +1,30 @@
+{
+  "method": "dense",
+  "n": 8,
+  "dim": 16,
+  "rank": 2,
+  "block_size": 16,
+  "ring_dim": 16384,
+  "samples_ms": [
+    1036.367175,
+    1035.533433,
+    1036.627335
+  ],
+  "median_ms": 1036.367175,
+  "key_setup_ms": 490.216049,
+  "encoding_ms": 188.220814,
+  "input_encryption_ms": 777.100761,
+  "max_he_error": 1.487244355447004e-11,
+  "max_total_error": 1.487244355447004e-11,
+  "relative_output_error": 0.0,
+  "ct_pt": 128,
+  "ct_ct": 8,
+  "rotations": 15,
+  "additions": 127,
+  "selected_weight_peak_bytes": 0,
+  "selected_weight_peak_count": 0,
+  "peak_rss_kib": 275864,
+  "case": "structured_n8_d16_r2",
+  "kind": "structured",
+  "label": "dense"
+}

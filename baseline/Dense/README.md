@@ -1,11 +1,7 @@
 # Dense
 
-Implementation pending.
+用明文权重计算全部 `Enc(W_i x)`，再用加密路由选择输出。所有 expert 共用输入
+rotation，避免重复旋转造成不公平比较。
 
-For each expert, compute `Enc(W_i x)` using plaintext expert weights and
-encrypted activations. Privately select the desired encrypted output using
-encrypted routing information.
-
-This baseline preserves routing privacy and evaluates every expert. It measures
-whether SelectApply reduces the cost of this evaluation-and-selection strategy.
-Record output selection costs as well as expert evaluation costs.
+该方案保护路由，但执行全部 expert。统计包含线性变换和秘密输出选择。
+实现位于 `dense.cpp`。

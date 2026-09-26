@@ -1,0 +1,30 @@
+{
+  "method": "basis",
+  "n": 8,
+  "dim": 16,
+  "rank": 8,
+  "block_size": 16,
+  "ring_dim": 16384,
+  "samples_ms": [
+    1338.346224,
+    1336.971728,
+    1335.489574
+  ],
+  "median_ms": 1336.971728,
+  "key_setup_ms": 489.691366,
+  "encoding_ms": 302.263056,
+  "input_encryption_ms": 778.279641,
+  "max_he_error": 9.801180700375056e-12,
+  "max_total_error": 9.801229272632384e-12,
+  "relative_output_error": 1.976586611625032e-15,
+  "ct_pt": 192,
+  "ct_ct": 8,
+  "rotations": 15,
+  "additions": 183,
+  "selected_weight_peak_bytes": 0,
+  "selected_weight_peak_count": 0,
+  "peak_rss_kib": 318160,
+  "case": "random_n8_d16_r8",
+  "kind": "random",
+  "label": "basis"
+}

@@ -1,0 +1,30 @@
+{
+  "method": "select_weight",
+  "n": 8,
+  "dim": 16,
+  "rank": 2,
+  "block_size": 16,
+  "ring_dim": 16384,
+  "samples_ms": [
+    1247.340357,
+    1242.979424,
+    1244.775911
+  ],
+  "median_ms": 1244.775911,
+  "key_setup_ms": 483.296025,
+  "encoding_ms": 185.226686,
+  "input_encryption_ms": 769.116168,
+  "max_he_error": 1.8275103652598546e-11,
+  "max_total_error": 1.8275103652598546e-11,
+  "relative_output_error": 0.0,
+  "ct_pt": 128,
+  "ct_ct": 16,
+  "rotations": 15,
+  "additions": 127,
+  "selected_weight_peak_bytes": 16777216,
+  "selected_weight_peak_count": 16,
+  "peak_rss_kib": 291380,
+  "case": "random_n8_d16_r2",
+  "kind": "random",
+  "label": "select_weight_full"
+}

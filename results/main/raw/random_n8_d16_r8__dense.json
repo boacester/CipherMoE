@@ -1,0 +1,30 @@
+{
+  "method": "dense",
+  "n": 8,
+  "dim": 16,
+  "rank": 8,
+  "block_size": 16,
+  "ring_dim": 16384,
+  "samples_ms": [
+    1032.050099,
+    1030.305328,
+    1031.318244
+  ],
+  "median_ms": 1031.318244,
+  "key_setup_ms": 482.603005,
+  "encoding_ms": 185.360186,
+  "input_encryption_ms": 768.868251,
+  "max_he_error": 1.2674875038420907e-11,
+  "max_total_error": 1.2674875038420907e-11,
+  "relative_output_error": 0.0,
+  "ct_pt": 128,
+  "ct_ct": 8,
+  "rotations": 15,
+  "additions": 127,
+  "selected_weight_peak_bytes": 0,
+  "selected_weight_peak_count": 0,
+  "peak_rss_kib": 275908,
+  "case": "random_n8_d16_r8",
+  "kind": "random",
+  "label": "dense"
+}

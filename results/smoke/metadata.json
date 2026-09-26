@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-09-26 15:22:06 +0800",
+  "cpu": "x86_64",
+  "threads": 1,
+  "repeats": 1,
+  "profile": "smoke",
+  "failures": []
+}

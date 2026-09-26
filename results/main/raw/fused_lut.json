@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "name": "fused_arbitrary",
+      "samples_ms": [
+        811.755409,
+        806.593075,
+        812.629838
+      ],
+      "median_ms": 811.755409,
+      "eval_func_calls": 1,
+      "internal_pbs": 2
+    },
+    {
+      "name": "select_then_apply_arbitrary",
+      "samples_ms": [
+        1623.640277,
+        1622.922058,
+        1622.51799
+      ],
+      "median_ms": 1622.922058,
+      "eval_func_calls": 2,
+      "internal_pbs": 4
+    },
+    {
+      "name": "fused_negacyclic",
+      "samples_ms": [
+        420.62659,
+        403.653648,
+        406.421694
+      ],
+      "median_ms": 406.421694,
+      "eval_func_calls": 1,
+      "internal_pbs": 1
+    },
+    {
+      "name": "select_then_apply_negacyclic",
+      "samples_ms": [
+        808.570497,
+        805.300186,
+        819.863394
+      ],
+      "median_ms": 808.570497,
+      "eval_func_calls": 2,
+      "internal_pbs": 2
+    }
+  ],
+  "key_setup_ms": 50011.063042,
+  "input_encryption_ms": 0.239456,
+  "p": 8,
+  "q": 2048,
+  "ring_dim": 2048,
+  "peak_rss_kib": 4947244
+}

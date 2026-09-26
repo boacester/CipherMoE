@@ -1,15 +1,8 @@
 # Select_Weight
 
-Implementation pending.
+用加密 one-hot 指示量秘密选择 CKKS 权重对角线，再与加密输入相乘。
+完整版本保存全部选中对角线；分块版本每次只保存指定数量的对角线。
+两者使用相同的编码和密码学参数，实现在 `select_weight.cpp`。
 
-Privately select the expert's encoded weight matrix or diagonals into encrypted
-weights, then apply them to encrypted activations. Include both selection and
-ciphertext-ciphertext application costs.
-
-An optional streaming variant selects and applies one block or diagonal at a
-time. It tests the memory and latency effects of avoiding full simultaneous
-materialization. It still forms encrypted selected blocks and performs
-ciphertext-ciphertext products.
-
-This variant is an ablation within Select_Weight; it does not establish the
-proposed SelectApply construction.
+分块减少同时活跃的加密权重，但保留密文与密文乘法，属于问题 A 的消融。
+FHEW 标量对照还包含“先查表选权重，再查表乘法”。

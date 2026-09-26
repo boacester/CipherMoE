@@ -1,1 +1,4 @@
 /thirdparty/openfhe/
+/.venv/
+/build/
+__pycache__/

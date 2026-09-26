@@ -1,0 +1,11 @@
+case,kind,label,method,n,dim,rank,block_size,median_ms,max_he_error,relative_output_error,ct_pt,ct_ct,rotations,additions,selected_weight_peak_bytes,peak_rss_kib
+structured_n4_d8_r2,structured,public,public,4,8,2,8,158.017126,3.3662127965927268e-12,0.0,8,0,7,7,0,109284
+structured_n4_d8_r2,structured,dense,dense,4,8,2,8,344.065352,5.933323277140801e-12,0.0,32,4,7,31,0,109664
+structured_n4_d8_r2,structured,select_weight_full,select_weight,4,8,2,8,437.153483,1.2406298210976274e-11,0.0,32,8,7,31,8388608,116872
+structured_n4_d8_r2,structured,select_weight_stream,select_weight,4,8,2,1,411.113814,8.220236991096641e-12,0.0,32,8,7,31,1048576,109672
+structured_n4_d8_r2,structured,basis,basis,4,8,2,8,269.371989,9.170580961281871e-12,0.0,24,2,7,21,0,105532
+random_n4_d8_r2,random,public,public,4,8,2,8,157.363753,4.654604881876414e-12,0.0,8,0,7,7,0,109092
+random_n4_d8_r2,random,dense,dense,4,8,2,8,344.952612,9.549269361364132e-12,0.0,32,4,7,31,0,109708
+random_n4_d8_r2,random,select_weight_full,select_weight,4,8,2,8,426.90824,6.6280314570121845e-12,0.0,32,8,7,31,8388608,116724
+random_n4_d8_r2,random,select_weight_stream,select_weight,4,8,2,1,408.572012,5.896227950330513e-12,0.0,32,8,7,31,1048576,109612
+random_n4_d8_r2,random,basis,basis,4,8,2,8,267.047243,4.863554003975423e-12,0.8588007654169094,24,2,7,21,0,105508

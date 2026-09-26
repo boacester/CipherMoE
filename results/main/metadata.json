@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-09-26 15:35:31 +0800",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8592V",
+  "threads": 1,
+  "repeats": 3,
+  "profile": "main",
+  "failures": []
+}

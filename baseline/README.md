@@ -1,37 +1,32 @@
-# Linear Primitive Baselines
+# 线性层对照实验
 
-The initial comparison computes `y = W_e x` for a single token and one selected
-expert. All methods use the same inputs, expert matrices, and numerical
-reference. Private methods receive encrypted activations and routing information.
-`Routing_Publicity` receives a plaintext expert index and encrypted activations.
+首轮比较单 token、单个选中 expert 的 `y = W_e x`，使用相同模型、输入和数值参考。
+私有方案接收加密 activation 和路由；`Routing_Publicity` 接收明文 expert ID。
 
-| Directory | Method | Comparison purpose |
+| 目录 | 方法 | 比较目的 |
 | --- | --- | --- |
-| `Dense/` | Evaluate all plaintext-weight operators on encrypted activations, then privately select | Cost of evaluating every expert |
-| `Select_Weight/` | Privately select encrypted weights, then apply them to encrypted activations | Cost of weight selection and ciphertext-ciphertext multiplication |
-| `Routing_Publicity/` | Apply the plaintext-weight operator named by a public index | Performance reference when routing is known to the server |
+| `Dense/` | 计算所有 expert 后秘密选择输出 | 全 expert 计算的代价 |
+| `Select_Weight/` | 秘密选择加密权重后计算 | 权重选择和密文乘法的代价 |
+| `Routing_Publicity/` | 直接使用公开 ID 对应的权重 | 路由公开时的性能参照，会泄露 ID |
 
-The proposed method belongs in `../src/`. Implementations are pending.
+候选设计位于 `../src/`。
 
-## Comparison Contract
+## 对照约定
 
-- Match numerical ranges, precision requirements, and target security level.
-- Report the routing representation and include any required index-to-selector
-  conversion in the primitive total, or explicitly report it as an excluded cost.
-- Separate model preprocessing and client key setup from online evaluation.
-- Report online latency, error, peak memory, and expensive operation counts.
-- Record packing, cryptographic parameters, thread count, and hardware.
-- Treat router score computation and top-k generation as later integration work;
-  the initial experiment starts from an already supplied routing choice.
+- 使用一致的数值范围、误差要求和目标安全级别。
+- CKKS 实验从已加密并广播到槽位的 one-hot 指示量开始，排除 ID 转换和 router。
+  FHEW 实验从加密 ID 开始，两者不能直接当作端到端比较。
+- 模型预处理、密钥设置、输入加密和解密检查与在线求值分别计时。
+- 记录延迟、误差、操作数、活跃加密权重载荷和独立进程峰值 RSS。
+- 保存打包、密码学参数、线程数和硬件；仅报告实际运行的范围。
 
-## Optional Materialization Ablation
+## 问题 A：减少中间存储
 
-`Select_Weight/` can also contain a streaming variant: select one weight block
-or encoded diagonal, apply it immediately, and accumulate its contribution.
-This reduces simultaneous intermediate storage while retaining encrypted
-selected blocks and their ciphertext-ciphertext products.
+在 `Select_Weight/` 中比较完整保存和按对角线分块。分块版本立即应用选中的
+加密权重，减少同时活跃的权重，但仍然执行相同数量的密文乘法。
 
-Compare the materialized and streaming versions to measure the effect of
-intermediate storage alone. This is an optional ablation, not a prerequisite
-for implementing SelectApply. The main research comparison is between a concrete
-SelectApply construction in `src/` and the baselines above.
+## 问题 B：融合选择与应用
+
+用 `src/` 中的具体构造与基线比较。联合查表验证有限精度标量的融合，矩阵扩展
+和打包效率另行评估。共享基优化同时测量任意随机权重、共享结构权重和近似误差，
+避免将结构化特例推广到任意模型。

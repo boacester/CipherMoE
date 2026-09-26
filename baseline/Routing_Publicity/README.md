@@ -1,10 +1,7 @@
 # Routing_Publicity
 
-Implementation pending.
+服务器获得明文 expert ID，直接将对应的明文权重应用于加密 activation。
+实现位于 `public_routing.cpp`。
 
-The server receives the selected expert index `e` in plaintext and directly
-applies `W_e` to encrypted activations using plaintext-weight operations.
-
-This is a performance reference for computation with public routing.
-It reveals the expert index to the server and does not meet the private-routing
-requirement. Report it separately from the privacy-preserving baselines.
+这是路由公开时的性能参照，会泄露 expert ID，不满足私有路由要求。
+其密码学参数与其他 CKKS 对照一致。

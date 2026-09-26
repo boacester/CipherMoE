@@ -1,63 +1,57 @@
-# Local OpenFHE Installation
+# OpenFHE 本地安装
 
-OpenFHE is pinned to `v1.5.1`, commit
-`1306d14f8c26bb6150d3e6ad54f28dfe1007689e`, with its upstream submodules.
+固定版本为 `v1.5.1`，提交为
+`1306d14f8c26bb6150d3e6ad54f28dfe1007689e`，包含该版本的上游子模块。
 
 ```text
 thirdparty/
   openfhe/
-    src/          Upstream source checkout
-    build/        Libraries and selected upstream examples
-    install/      Local headers, shared libraries, and CMake package
-    check-build/  Installation check linked against the local package
+    src/          上游源码
+    build/        编译后的库和部分示例
+    install/      本地头文件、共享库和 CMake 配置
+    check-build/  链接本地安装的检查程序
 ```
 
-These downloaded and generated directories are ignored by the workspace's
-`.gitignore`. The installer and check sources are in `scripts/`.
+下载和构建产物由项目 `.gitignore` 忽略。安装脚本和检查源码位于 `scripts/`。
+上游源码中的 README 保留原文。
 
-## Install and Check
+## 安装和检查
 
-From the workspace root, run:
+在 workspace 根目录运行：
 
 ```bash
 bash scripts/install_openfhe.sh
 ```
 
-Prerequisites: Git, CMake >= 3.16.3, GCC >= 9, Make, and network access for
-the initial download. The script defaults to 16 build jobs; override with
-`BUILD_JOBS=8 bash scripts/install_openfhe.sh`.
+要求 Git、CMake >= 3.16.3、GCC >= 9、Make，以及首次下载时的网络访问。
+默认 16 个构建任务，可用 `BUILD_JOBS=8 bash scripts/install_openfhe.sh` 调整。
 
-Build configuration: Release, C++17, shared libraries, OpenMP enabled,
-64-bit native integer backend, and machine-specific optimizations disabled.
-The 64-bit backend setting is an implementation choice, not a security level.
-Upstream unit tests and benchmarks are disabled. The selected upstream
-example targets are `simple-real-numbers`, `boolean`, and `scheme-switching`.
+配置为 Release、C++17、共享库、OpenMP、64 位整数后端，关闭机器特定优化。
+64 位后端不是安全级别。关闭上游单元测试和 benchmarks，编译
+`simple-real-numbers`、`boolean`、`scheme-switching` 三个示例。
 
-The installation check uses CKKS with `HEStd_128_classic` and FHEW with
-`STD128`. It checks CKKS encrypted multiplication (absolute error <= 1e-6)
-and encrypted AND/OR. This is an installation check, not a performance
-benchmark or a full scheme-switching test.
+检查使用 CKKS 的 `HEStd_128_classic` 和 FHEW 的 `STD128`，验证密文乘法
+（绝对误差不超过 `1e-6`）和 AND/OR，不等于完整 scheme switching 验证。
 
-## Use in an Experiment
+## 在实验中使用
 
-Pass the local prefix to the experiment's CMake configuration:
+给 CMake 提供本地安装目录：
 
 ```bash
 cmake -S path/to/experiment -B build/experiment \
   -DCMAKE_PREFIX_PATH="$PWD/thirdparty/openfhe/install"
 ```
 
-Use `find_package(OpenFHE 1.5.1 EXACT CONFIG REQUIRED)` in CMake. See
-`scripts/openfhe_check/CMakeLists.txt` for a working consumer.
+使用 `find_package(OpenFHE 1.5.1 EXACT CONFIG REQUIRED)`。
+可参考 `scripts/openfhe_check/CMakeLists.txt`。
 
-The upstream scheme-switching example is available at:
+上游转换示例位于：
 
 ```text
 thirdparty/openfhe/build/bin/examples/pke/scheme-switching
 ```
 
-Some upstream examples use toy parameters. Their timings must not be used
-as research baselines without configuring and recording suitable parameters.
+部分示例使用 TOY 参数，不能直接将其计时作为正式研究基线。
 
-References: [OpenFHE release](https://github.com/openfheorg/openfhe-development/releases/tag/v1.5.1)
-and [Linux installation guide](https://openfhe-development.readthedocs.io/en/latest/sphinx_rsts/intro/installation/linux.html).
+参考：[固定版本](https://github.com/openfheorg/openfhe-development/releases/tag/v1.5.1)、
+[Linux 安装说明](https://openfhe-development.readthedocs.io/en/latest/sphinx_rsts/intro/installation/linux.html)。
