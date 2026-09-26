@@ -10,7 +10,8 @@ baseline/
   Dense/              计算全部 expert，再秘密选择输出
   Select_Weight/      秘密选择加密权重再计算；包含分块消融
   Routing_Publicity/  路由公开时的性能参照
-src/                  Select-and-Apply 候选及优化
+basis/                Select-and-Apply 候选及优化
+models/               真实 MoE checkpoint（权重不纳入 Git）
 experiments/          共用实验代码和批量运行入口
 documents/            初始想法与实验报告
 results/              配置、原始指标和图表
@@ -36,6 +37,22 @@ cmake --build build --parallel 8
 
 OpenFHE 固定为 `v1.5.1`，本地安装目录为 `thirdparty/openfhe/install`。
 详细说明见 [thirdparty/README.md](thirdparty/README.md)。
+
+## 分阶段实验
+
+阶段 A 使用固定 revision 的真实 MoE checkpoint，先做明文权重与 calibration activation
+结构分析，不运行 FHE：
+
+```bash
+.venv/bin/python scripts/download_models.py
+.venv/bin/python experiments/capture_moe_activations.py
+OPENBLAS_NUM_THREADS=64 .venv/bin/python experiments/analyze_moe_weights.py \
+  --calibration-dir results/stage_a/calibration
+.venv/bin/python experiments/report_stage_a.py
+```
+
+模型 revision 记录在 `experiments/stage_a_models.json`，模型权重保存在 `models/` 且不纳入
+Git。完整分阶段计划见 [documents/experiment_plan.md](documents/experiment_plan.md)。
 
 ## 当前实验结果
 

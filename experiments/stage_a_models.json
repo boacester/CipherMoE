@@ -1,0 +1,34 @@
+{
+  "models": [
+    {
+      "name": "OLMoE-1B-7B-0924",
+      "repo_id": "allenai/OLMoE-1B-7B-0924",
+      "revision": "6d84c48581ece794365f2b8e9cfb043c68ade9c5",
+      "local_dir": "models/OLMoE-1B-7B-0924",
+      "expected_weight_bytes": 13838721960,
+      "expected_shards": 3,
+      "expected_moe_layers": 16,
+      "expected_experts": 64
+    },
+    {
+      "name": "deepseek-moe-16b-base",
+      "repo_id": "deepseek-ai/deepseek-moe-16b-base",
+      "revision": "521d2bc4fb69a3f3ae565310fcc3b65f97af2580",
+      "local_dir": "models/deepseek-moe-16b-base",
+      "expected_weight_bytes": 32752135032,
+      "expected_shards": 7,
+      "expected_moe_layers": 27,
+      "expected_experts": 64
+    },
+    {
+      "name": "Qwen1.5-MoE-A2.7B",
+      "repo_id": "Qwen/Qwen1.5-MoE-A2.7B",
+      "revision": "1a758c50ecb6350748b9ce0a99d2352fd9fc11c9",
+      "local_dir": "models/Qwen1.5-MoE-A2.7B",
+      "expected_weight_bytes": 28632144944,
+      "expected_shards": 8,
+      "expected_moe_layers": 24,
+      "expected_experts": 60
+    }
+  ]
+}

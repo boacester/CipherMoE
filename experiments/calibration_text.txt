@@ -1,0 +1,17 @@
+Encryption changes which operations are cheap, so system design must account for arithmetic depth,
+packing layout, memory traffic, and approximation error together. A sparse mixture-of-experts model
+routes each token to a small subset of feed-forward networks. The route can reveal properties of the
+input even when the input itself remains encrypted. A useful experiment therefore separates model
+quality, cryptographic correctness, computational latency, and resource consumption.
+
+Reliable measurements require fixed software versions, fixed model revisions, repeated trials, and
+raw outputs that can be checked independently. A fast primitive may have little end-to-end value when
+conversion, comparison, bootstrapping, or data movement dominates the complete pipeline. Conversely,
+a structural approximation can reduce arithmetic while introducing an error that compounds through
+many transformer layers. Both the median behavior and the worst layers matter.
+
+The calibration passage intentionally mixes technical prose with ordinary declarative sentences.
+Morning light crossed the quiet room while a train moved between distant towns. Researchers compared
+several hypotheses, recorded unexpected outcomes, and revised the next experiment. A compact model
+can still contain diverse internal representations, and two experts with similar norms need not have
+similar directions. Evidence should decide whether shared structure is strong enough to exploit.

@@ -147,12 +147,6 @@ down_proj(SiLU(gate_proj(x)) * up_proj(x))
 - 每项多次重复，报告 median、分位数或标准差。
 - 保存完整配置、原始结果、失败/OOM 点和复现命令。
 
-### 3.7 当前工程上的立即问题
-
-工作目录已经从 `src/` 调整为 `basis/`，但当前 `CMakeLists.txt` 和根 README 仍引用
-`src/basis_apply.cpp`、`src/fused_lut.cpp` 和 `src/`。下一次构建前需要统一目录和文档，
-否则干净构建会失败；现有 `build/` 中的二进制只是移动目录前的旧产物。
-
 ## 4. 建议的实验组织
 
 ### 阶段 A：真实权重结构分析，不运行 FHE
@@ -259,9 +253,8 @@ Basis 已经消除了这类对象，但仍需针对 rotations、basis plaintext 
 
 ## 6. 下一步优先级
 
-1. 修复 `basis/` 重命名后的构建和文档路径。
-2. 实现真实 checkpoint 的 layer-wise/projection-wise basis 分析脚本。
-3. 给 Basis 增加准确的 live-cipher/live-plaintext 内存统计和 diagonal tiling 消融。
-4. 支持矩形矩阵、多个 token 和 BSGS/batch packing。
-5. 实现完整 top-1 MoE 层，再扩展 top-k；不要直接跳到完整模型。
-6. 只有确认真实模型存在足够小的有效 `r` 后，才投入完整纯 FHE 端到端实现。
+1. 实现真实 checkpoint 的 layer-wise/projection-wise basis 分析脚本。
+2. 给 Basis 增加准确的 live-cipher/live-plaintext 内存统计和 diagonal tiling 消融。
+3. 支持矩形矩阵、多个 token 和 BSGS/batch packing。
+4. 实现完整 top-1 MoE 层，再扩展 top-k；不要直接跳到完整模型。
+5. 只有确认真实模型存在足够小的有效 `r` 后，才投入完整纯 FHE 端到端实现。
