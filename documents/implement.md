@@ -75,6 +75,31 @@ structured-model baseline 或可选优化，但不是 arbitrary pretrained MoE �
 输出函数真正复用选择；以及 private function evaluation / oblivious array access 文献中是否有
 适合 public model、secret index 的构造。任何新原语先形成最小 benchmark 和复杂度表。
 
+### 本轮研究优先级：P0 encrypted selector amortization
+
+Stage C/D 以前的原型仍把 `(e,x)` 联合编码，且在 `N=2` 等小域内成立；
+它们没有回答真实矩阵上的 control amortization。先单独做
+`MultiOutputSelect(Enc(e), {V_i}) -> Enc(V_e)`，其中公开向量值可独立变化、
+不依赖跨 expert 的低秩结构，不输入 activation，不把扩展 joint LUT 当成主线。
+优先扫描 `m=1,4,8,16,32,64,128,256,512` 和小/大 `N`；记录
+`T(m), T(m)/m`、实际 blind rotation、key switching、sample extraction、
+公开 LUT、evaluation key、输入/输出密文字节数和正确性。
+同一安全参数下把单 accumulator 能容纳的输出数与超过后必须额外执行的
+PBS 分开计费。完整向量可在 P0 作为诊断输出，但不代表最终方案允许
+物化完整 `Enc(W_e)`：P1/P2 必须证明 compact control 能直接控制
+packed arithmetic，且不退化成 one-hot + Dense CKKS 或逐元素 PBS。
+如果大 `N` 下 `T(m)` 基本随 `m` 线性增长，就按负面结果停止该
+scalar-LUT 路线的模型级扩展，转向 RLWE coefficient packing、
+scheme switching 或其他可复用的 encrypted-control 表示。
+
+2026-09-27 已完成固定 TFHE-rs 参数下的 P0 `Enc(e)` 独立实验：
+`N=2/8/64`、`m=1..512` 的九点扫描；`N=64,m=512` 实测
+512 次 blind rotation / 101.84 秒，只有一个输出能共享单次旋转，
+因此 **shortint many-LUT 在该参数下对 64 experts 的模型级扩展 no-go**。
+原始结果和参数限制见 `results/p0_selector/report.md`。这不排除
+其他 packed RLWE/GLWE 或 CKKS 兼容的 encrypted-control 构造；
+在验证新表示前暂缓 P1/P2 和完整 MoE 集成。
+
 ## 4. 分阶段实现与验证
 
 每个阶段结束都生成独立的 `results/stage_*/report.md`，报告通过项、失败项、原始配置、复现

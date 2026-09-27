@@ -1,0 +1,42 @@
+{
+  "blind_rotations": 16,
+  "custom_weights": false,
+  "decrypt_ms": 1.733956,
+  "encryption_ms": 1.149797,
+  "evaluation_key_bytes": 989461560,
+  "failures": 0,
+  "independent_lut_accumulator_bytes": 2097152,
+  "independent_median_ms": 3183.7049625,
+  "independent_ms": [
+    3205.9579989999997,
+    3161.4519259999997
+  ],
+  "independent_pbs": 16,
+  "input_capacity": 64,
+  "input_ciphertext_bytes": 65616,
+  "keygen_ms": 29991.297435,
+  "keyswitches": 16,
+  "lut_accumulator_bytes": 2097152,
+  "m": 16,
+  "n": 64,
+  "online_median_ms": 3172.6972185,
+  "online_ms": [
+    3212.162965,
+    3133.231472
+  ],
+  "online_ms_per_output": 198.29357615625,
+  "output_ciphertext_bytes_each": 65616,
+  "outputs_per_blind_rotation": 1,
+  "parameter": "V1_8_PARAM_MESSAGE_3_CARRY_3_KS_PBS_GAUSSIAN_2M128",
+  "peak_rss_kib": 1035400,
+  "plaintext_model_bytes": 1024,
+  "preprocessing_ms": 1.465727,
+  "response_ciphertext_bytes": 1049856,
+  "sample_extractions": 16,
+  "verified_experts": [
+    0,
+    32,
+    63
+  ],
+  "verified_outputs": 48
+}

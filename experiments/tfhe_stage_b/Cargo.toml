@@ -6,3 +6,4 @@ edition = "2021"
 [dependencies]
 tfhe = { git = "https://github.com/zama-ai/tfhe-rs.git", rev = "079f46d08ffb8763de54b7794e850ddbd98fe63b", default-features = false, features = ["shortint", "experimental"] }
 bincode = "1.3"
+serde_json = "1.0"

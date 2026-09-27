@@ -88,6 +88,20 @@ RUSTUP_TOOLCHAIN=1.91.1 CARGO_TARGET_DIR="$PWD/build/tfhe-target" \
 [Stage F](results/stage_f/report.md)。其中 Stage D 仅为小尺寸原型，
 不代表通过模型尺度 SelectApply 验收。
 
+最新 P0 使用**仅加密 ID** 选择公开多输出向量，独立于 Stage C/D 的
+`(e,x)` 联合 LUT；对 `N=2/8/64` 逐步扫描 `m=1..512`：
+
+```bash
+RUSTUP_TOOLCHAIN=1.91.1 CARGO_TARGET_DIR="$PWD/build/tfhe-target" \
+  cargo build --release --manifest-path experiments/tfhe_stage_b/Cargo.toml --bin p0_selector
+.venv/bin/python experiments/run_p0_selector.py --timeout 1500 --repeats 2
+```
+
+实测、公开模型/LUT/key 存储、密文通信及判断见
+[results/p0_selector/report.md](results/p0_selector/report.md)。`N=64,m=512`
+需要 512 次 blind rotation，当前 shortint many-LUT 路线无法摊销大 N 的
+选择成本；这不是对其他 packed/select-and-apply 构造的不可行性证明。
+
 ## 当前实验结果
 
 已完成的单线程、三次重复主实验见 [results/main/report.md](results/main/report.md)，

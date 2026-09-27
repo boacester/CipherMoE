@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-27",
+  "tfhe_commit": "079f46d08ffb8763de54b7794e850ddbd98fe63b",
+  "parameter": "V1_8_PARAM_MESSAGE_3_CARRY_3_KS_PBS_GAUSSIAN_2M128",
+  "expert_counts": [
+    2,
+    8,
+    64
+  ],
+  "sizes": [
+    1,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "repeats": 2,
+  "memory_gib": 32,
+  "timeout_s_per_process": 1500,
+  "threads": 1,
+  "weight_values": "u4 unsigned, range 0..15",
+  "input": "only Enc(e), public arbitrary weight vectors; no activation"
+}
