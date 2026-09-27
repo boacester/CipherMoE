@@ -275,13 +275,13 @@ def load_existing(path: Path) -> set[tuple[str, int, str]]:
 def write_summary(raw_path: Path, output_dir: Path) -> None:
     rows = [json.loads(line) for line in raw_path.read_text().splitlines() if line.strip()]
     summary_path = output_dir / "rank_thresholds.csv"
-    thresholds = (0.10, 0.05, 0.01)
+    thresholds = (0.05, 0.01, 0.001)
     with summary_path.open("w", newline="") as handle:
         fieldnames = [
             "model", "layer", "projection", "method", "experts", "out_features",
             "in_features", "features_used", "features_total", "exact", "seconds",
-            "rank_at_10pct", "rank_at_5pct", "rank_at_1pct",
-            "output_rank_at_10pct", "output_rank_at_5pct", "output_rank_at_1pct",
+            "rank_at_5pct", "rank_at_1pct", "rank_at_0_1pct",
+            "output_rank_at_5pct", "output_rank_at_1pct", "output_rank_at_0_1pct",
         ]
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
@@ -313,12 +313,12 @@ def write_summary(raw_path: Path, output_dir: Path) -> None:
                     "features_total": row["features_total"],
                     "exact": row["exact"],
                     "seconds": f"{row['seconds']:.3f}",
-                    "rank_at_10pct": ranks[0],
-                    "rank_at_5pct": ranks[1],
-                    "rank_at_1pct": ranks[2],
-                    "output_rank_at_10pct": output_ranks[0],
-                    "output_rank_at_5pct": output_ranks[1],
-                    "output_rank_at_1pct": output_ranks[2],
+                    "rank_at_5pct": ranks[0],
+                    "rank_at_1pct": ranks[1],
+                    "rank_at_0_1pct": ranks[2],
+                    "output_rank_at_5pct": output_ranks[0],
+                    "output_rank_at_1pct": output_ranks[1],
+                    "output_rank_at_0_1pct": output_ranks[2],
                 })
 
     models = sorted({row["model"] for row in rows})
@@ -362,7 +362,8 @@ def write_summary(raw_path: Path, output_dir: Path) -> None:
                     low, high = np.quantile(curves, [0.1, 0.9], axis=0)
                     axis.plot(ranks, median, label=method, color=colors[method])
                     axis.fill_between(ranks, low, high, color=colors[method], alpha=0.15)
-                axis.axhline(0.05, color="black", linewidth=0.8, linestyle="--")
+                axis.axhline(0.01, color="black", linewidth=0.8, linestyle="--")
+                axis.axhline(0.001, color="black", linewidth=0.8, linestyle=":")
                 axis.set_title(f"{model} / {projection}")
                 axis.set_xlabel("total full-matrix basis budget")
                 axis.set_ylabel(ylabel)

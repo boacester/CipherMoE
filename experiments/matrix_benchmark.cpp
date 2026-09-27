@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
         const double key_setup_ms = Milliseconds(key_start);
 
         const auto encoding_start = Clock::now();
-        if (method == "basis") {
+        if (method == "low_rank_basis") {
             for (const auto& matrix : basis)
                 prepared.basis.push_back(Encode(prepared.context, matrix));
             for (const auto& row : coefficients) {
@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
             if (method == "dense") return Dense(prepared);
             if (method == "select_weight") return SelectWeight(prepared, block_size);
             if (method == "public") return PublicRouting(prepared);
-            if (method == "basis") return BasisApply(prepared);
+            if (method == "low_rank_basis") return LowRankBasisApply(prepared);
             throw std::runtime_error("unknown method");
         };
         std::vector<double> samples;
@@ -148,7 +148,7 @@ int main(int argc, char** argv) {
             decrypted->SetLength(dim);
             const auto actual = decrypted->GetCKKSPackedValue();
             const auto full = Reference(weights.at(route), inputs.at(input_index));
-            const auto target = method == "basis" ?
+            const auto target = method == "low_rank_basis" ?
                 Reference(approximation.at(route), inputs.at(input_index)) : full;
             for (size_t j = 0; j < dim; ++j) {
                 const double error = std::abs(actual.at(j) - target[j]);

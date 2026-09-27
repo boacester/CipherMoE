@@ -1,0 +1,10 @@
+[
+  {
+    "case": "32:cmux:4:1",
+    "error": "Command '['/home/liupeixin/workspace2026/CipherMoE/build/stage_b_scalar', '32', 'cmux', '4', '1']' timed out after 360 seconds"
+  },
+  {
+    "case": "64:cmux:4:1",
+    "error": "Command '['/home/liupeixin/workspace2026/CipherMoE/build/stage_b_scalar', '64', 'cmux', '4', '1']' timed out after 360 seconds"
+  }
+]

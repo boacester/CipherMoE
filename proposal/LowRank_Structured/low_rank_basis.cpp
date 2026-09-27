@@ -1,7 +1,7 @@
 #include "experiments/ckks_support.h"
 
 namespace ciphermoe {
-Result BasisApply(const Inputs& in) {
+Result LowRankBasisApply(const Inputs& in) {
     Result result;
     const auto rotations = RotateInput(in, result.counts);
     for (size_t r = 0; r < in.basis.size(); ++r) {

@@ -1,0 +1,20 @@
+[
+  {
+    "case": "tfhe_wopbs_legacy",
+    "weights": "2,-1,-2,0",
+    "verified": 17,
+    "failures": 0
+  },
+  {
+    "case": "openfhe_fused",
+    "weights": "2,-1",
+    "verified": 9,
+    "failures": 0
+  },
+  {
+    "case": "openfhe_cmux",
+    "weights": "2,-1",
+    "verified": 9,
+    "failures": 0
+  }
+]

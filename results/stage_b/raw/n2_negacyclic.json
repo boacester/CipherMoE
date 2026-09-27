@@ -1,0 +1,27 @@
+{
+  "n": 2,
+  "method": "negacyclic",
+  "p": 16,
+  "q": 4096,
+  "ring_dim": 4096,
+  "id_bits": 1,
+  "x_bits": 2,
+  "output_modulus": 16,
+  "lut_entries": 4096,
+  "lut_bytes": 32768,
+  "evaluation_key_bytes": 9945450650,
+  "keygen_ms": 100931.605633,
+  "preprocessing_ms": 0.036152,
+  "encryption_ms": 0.3991,
+  "decryption_ms": 0.11930700000000001,
+  "online_ms": [
+    833.538145,
+    847.91503
+  ],
+  "median_ms": 840.7265875,
+  "peak_rss_kib": 10017972,
+  "verified": 10,
+  "failures": 0,
+  "pbs_per_eval": 1,
+  "cmux_calls_per_eval": 0
+}

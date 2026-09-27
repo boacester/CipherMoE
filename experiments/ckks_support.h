@@ -75,5 +75,5 @@ inline Cipher Apply(const Inputs& in, const Diagonals& diagonals,
 Result Dense(const Inputs& in);
 Result SelectWeight(const Inputs& in, size_t block_size);
 Result PublicRouting(const Inputs& in);
-Result BasisApply(const Inputs& in);
+Result LowRankBasisApply(const Inputs& in);
 }  // namespace ciphermoe

@@ -1,0 +1,31 @@
+{
+  "n": 4,
+  "m": 2,
+  "p": 8,
+  "capacity": 64,
+  "verified_inputs": 16,
+  "verified_outputs": 64,
+  "failures": 0,
+  "keygen_ms": 29763.262422,
+  "evaluation_key_bytes": 989461560,
+  "preprocessing_ms": 0.174938,
+  "single_lut_bytes": 262144,
+  "many_lut_bytes": 131072,
+  "encryption_ms": 13.649752,
+  "decryption_ms": 0.6571039999999999,
+  "independent_ms": [
+    400.028402,
+    392.71900999999997,
+    399.472274
+  ],
+  "many_ms": [
+    233.85758,
+    199.733904,
+    248.719201
+  ],
+  "independent_median_ms": 399.472274,
+  "many_median_ms": 233.85758,
+  "independent_pbs": 2,
+  "many_blind_rotations": 1,
+  "peak_rss_kib": 1035520
+}

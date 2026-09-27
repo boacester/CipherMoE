@@ -1,0 +1,19 @@
+{
+  "n": 8,
+  "method": "tfhe_wopbs_legacy",
+  "p": 32,
+  "verified": 10,
+  "failures": 0,
+  "keygen_ms": 11877.632115,
+  "preprocessing_ms": 0.098773,
+  "encryption_ms": 1.7570930000000002,
+  "decryption_ms": 0.044843999999999995,
+  "online_ms": [
+    667.939345,
+    715.667008
+  ],
+  "median_ms": 691.8031765000001,
+  "evaluation_key_bytes": 777322664,
+  "lut_bytes": 8192,
+  "peak_rss_kib": 973368
+}

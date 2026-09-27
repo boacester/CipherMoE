@@ -12,7 +12,10 @@ target_compile_options(experiment_options INTERFACE ${OPENFHE_COMPILE_OPTIONS})
 target_link_libraries(experiment_options INTERFACE ${OpenFHE_SHARED_LIBRARIES})
 add_executable(matrix_benchmark experiments/matrix_benchmark.cpp
     baseline/Dense/dense.cpp baseline/Select_Weight/select_weight.cpp
-    baseline/Routing_Publicity/public_routing.cpp basis/basis_apply.cpp)
+    baseline/Routing_Publicity/public_routing.cpp
+    proposal/LowRank_Structured/low_rank_basis.cpp)
 target_link_libraries(matrix_benchmark PRIVATE experiment_options)
-add_executable(lut_benchmark basis/fused_lut.cpp)
+add_executable(lut_benchmark proposal/FHEW_SelectApply/fused_scalar_lut.cpp)
 target_link_libraries(lut_benchmark PRIVATE experiment_options)
+add_executable(stage_b_scalar proposal/FHEW_SelectApply/stage_b_scalar.cpp)
+target_link_libraries(stage_b_scalar PRIVATE experiment_options)

@@ -1,0 +1,26 @@
+{
+  "generated_utc": "2026-09-27T05:46:25.736432+00:00",
+  "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:28:48) [GCC 14.3.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+  "numpy": "2.3.3",
+  "scipy": "1.18.1",
+  "openblas_num_threads": "64",
+  "records": 201,
+  "exact_records": 201,
+  "calibrated_records": 201,
+  "analysis_seconds": 198.2608367819339,
+  "models": {
+    "OLMoE-1B-7B-0924": {
+      "repo_id": "allenai/OLMoE-1B-7B-0924",
+      "revision": "6d84c48581ece794365f2b8e9cfb043c68ade9c5"
+    },
+    "Qwen1.5-MoE-A2.7B": {
+      "repo_id": "Qwen/Qwen1.5-MoE-A2.7B",
+      "revision": "1a758c50ecb6350748b9ce0a99d2352fd9fc11c9"
+    },
+    "deepseek-moe-16b-base": {
+      "repo_id": "deepseek-ai/deepseek-moe-16b-base",
+      "revision": "521d2bc4fb69a3f3ae565310fcc3b65f97af2580"
+    }
+  }
+}

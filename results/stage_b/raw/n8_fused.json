@@ -1,0 +1,27 @@
+{
+  "n": 8,
+  "method": "fused",
+  "p": 32,
+  "q": 8192,
+  "ring_dim": 8192,
+  "id_bits": 3,
+  "x_bits": 2,
+  "output_modulus": 16,
+  "lut_entries": 8192,
+  "lut_bytes": 65536,
+  "evaluation_key_bytes": 19890473114,
+  "keygen_ms": 202693.950112,
+  "preprocessing_ms": 0.05406,
+  "encryption_ms": 0.643258,
+  "decryption_ms": 0.133209,
+  "online_ms": [
+    3500.02495,
+    3533.761489
+  ],
+  "median_ms": 3516.8932194999998,
+  "peak_rss_kib": 20553160,
+  "verified": 10,
+  "failures": 0,
+  "pbs_per_eval": 2,
+  "cmux_calls_per_eval": 0
+}

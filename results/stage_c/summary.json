@@ -1,0 +1,281 @@
+[
+  {
+    "n": 2,
+    "m": 1,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 8,
+    "verified_outputs": 16,
+    "failures": 0,
+    "keygen_ms": 29744.130831,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.122425,
+    "single_lut_bytes": 131072,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 7.683771,
+    "decryption_ms": 0.215716,
+    "independent_ms": [
+      250.61587899999998,
+      197.112546,
+      200.32434700000002
+    ],
+    "many_ms": [
+      197.275175,
+      240.335338,
+      200.261746
+    ],
+    "independent_median_ms": 200.32434700000002,
+    "many_median_ms": 200.261746,
+    "independent_pbs": 1,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035552
+  },
+  {
+    "n": 2,
+    "m": 2,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 8,
+    "verified_outputs": 32,
+    "failures": 0,
+    "keygen_ms": 29769.162975,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.17475,
+    "single_lut_bytes": 262144,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 7.967678,
+    "decryption_ms": 0.3797829999999999,
+    "independent_ms": [
+      460.607962,
+      454.766155,
+      403.26356899999996
+    ],
+    "many_ms": [
+      199.144092,
+      199.405541,
+      236.00475300000002
+    ],
+    "independent_median_ms": 454.766155,
+    "many_median_ms": 199.405541,
+    "independent_pbs": 2,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035480
+  },
+  {
+    "n": 2,
+    "m": 4,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 8,
+    "verified_outputs": 64,
+    "failures": 0,
+    "keygen_ms": 29737.389422,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.276932,
+    "single_lut_bytes": 524288,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 7.7653929999999995,
+    "decryption_ms": 0.7303489999999999,
+    "independent_ms": [
+      838.380182,
+      834.678426,
+      820.939446
+    ],
+    "many_ms": [
+      194.934507,
+      194.363571,
+      195.025641
+    ],
+    "independent_median_ms": 834.678426,
+    "many_median_ms": 194.934507,
+    "independent_pbs": 4,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035564
+  },
+  {
+    "n": 2,
+    "m": 8,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 8,
+    "verified_outputs": 128,
+    "failures": 0,
+    "keygen_ms": 29149.649712,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.483114,
+    "single_lut_bytes": 1048576,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 7.069744999999999,
+    "decryption_ms": 1.877682,
+    "independent_ms": [
+      1695.9802929999998,
+      1650.800365,
+      1653.224971
+    ],
+    "many_ms": [
+      198.609612,
+      203.0584,
+      198.466516
+    ],
+    "independent_median_ms": 1653.224971,
+    "many_median_ms": 198.609612,
+    "independent_pbs": 8,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035412
+  },
+  {
+    "n": 4,
+    "m": 1,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 16,
+    "verified_outputs": 32,
+    "failures": 0,
+    "keygen_ms": 29772.926281,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.124772,
+    "single_lut_bytes": 131072,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 13.398444,
+    "decryption_ms": 0.3265799999999999,
+    "independent_ms": [
+      198.667902,
+      203.939755,
+      246.14113500000002
+    ],
+    "many_ms": [
+      195.89337,
+      196.899944,
+      195.363336
+    ],
+    "independent_median_ms": 203.939755,
+    "many_median_ms": 195.89337,
+    "independent_pbs": 1,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035740
+  },
+  {
+    "n": 4,
+    "m": 2,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 16,
+    "verified_outputs": 64,
+    "failures": 0,
+    "keygen_ms": 29763.262422,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.174938,
+    "single_lut_bytes": 262144,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 13.649752,
+    "decryption_ms": 0.6571039999999999,
+    "independent_ms": [
+      400.028402,
+      392.71900999999997,
+      399.472274
+    ],
+    "many_ms": [
+      233.85758,
+      199.733904,
+      248.719201
+    ],
+    "independent_median_ms": 399.472274,
+    "many_median_ms": 233.85758,
+    "independent_pbs": 2,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035520
+  },
+  {
+    "n": 4,
+    "m": 4,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 16,
+    "verified_outputs": 128,
+    "failures": 0,
+    "keygen_ms": 29846.972822,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.281887,
+    "single_lut_bytes": 524288,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 13.405352000000002,
+    "decryption_ms": 1.310886,
+    "independent_ms": [
+      826.8133170000001,
+      843.620574,
+      846.765493
+    ],
+    "many_ms": [
+      196.223599,
+      202.38790500000002,
+      196.246226
+    ],
+    "independent_median_ms": 843.620574,
+    "many_median_ms": 196.246226,
+    "independent_pbs": 4,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035724
+  },
+  {
+    "n": 8,
+    "m": 1,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 32,
+    "verified_outputs": 64,
+    "failures": 0,
+    "keygen_ms": 29760.421117,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.122819,
+    "single_lut_bytes": 131072,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 23.642573999999993,
+    "decryption_ms": 0.6203079999999999,
+    "independent_ms": [
+      197.61974600000002,
+      198.655505,
+      251.961394
+    ],
+    "many_ms": [
+      197.57491299999998,
+      197.07033900000002,
+      197.55210200000002
+    ],
+    "independent_median_ms": 198.655505,
+    "many_median_ms": 197.55210200000002,
+    "independent_pbs": 1,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035680
+  },
+  {
+    "n": 8,
+    "m": 2,
+    "p": 8,
+    "capacity": 64,
+    "verified_inputs": 32,
+    "verified_outputs": 128,
+    "failures": 0,
+    "keygen_ms": 29770.806488000002,
+    "evaluation_key_bytes": 989461560,
+    "preprocessing_ms": 0.166494,
+    "single_lut_bytes": 262144,
+    "many_lut_bytes": 131072,
+    "encryption_ms": 24.626848000000003,
+    "decryption_ms": 1.1394430000000002,
+    "independent_ms": [
+      394.365527,
+      450.81365800000003,
+      396.300517
+    ],
+    "many_ms": [
+      197.002595,
+      196.859062,
+      196.38485699999998
+    ],
+    "independent_median_ms": 396.300517,
+    "many_median_ms": 196.859062,
+    "independent_pbs": 2,
+    "many_blind_rotations": 1,
+    "peak_rss_kib": 1035680
+  }
+]

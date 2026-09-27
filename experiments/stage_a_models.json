@@ -4,31 +4,61 @@
       "name": "OLMoE-1B-7B-0924",
       "repo_id": "allenai/OLMoE-1B-7B-0924",
       "revision": "6d84c48581ece794365f2b8e9cfb043c68ade9c5",
+      "modelscope_repo_id": "LLM-Research/OLMoE-1B-7B-0924",
+      "modelscope_revision": "828b9f2f7b67a2b560bf0c1174e9053b1638b6a6",
       "local_dir": "models/OLMoE-1B-7B-0924",
       "expected_weight_bytes": 13838721960,
       "expected_shards": 3,
       "expected_moe_layers": 16,
-      "expected_experts": 64
+      "expected_experts": 64,
+      "shards": [
+        {"name": "model-00001-of-00003.safetensors", "bytes": 4997744872, "sha256": "5e3cff7e367794685c241169072c940d200918617d5e2813f1c387dff52d845e"},
+        {"name": "model-00002-of-00003.safetensors", "bytes": 4997235176, "sha256": "15ef5c730ee3cfed7199498788cd2faf337203fc74b529625e7502cdd759f4a7"},
+        {"name": "model-00003-of-00003.safetensors", "bytes": 3843741912, "sha256": "a9abac4ac1b55c9adabac721a02fa39971f103eea9a65c310972b1246de76e04"}
+      ]
     },
     {
       "name": "deepseek-moe-16b-base",
       "repo_id": "deepseek-ai/deepseek-moe-16b-base",
       "revision": "521d2bc4fb69a3f3ae565310fcc3b65f97af2580",
+      "modelscope_repo_id": "deepseek-ai/deepseek-moe-16b-base",
+      "modelscope_revision": "78a67b3503bcee4d33c169bf4c3fe16b620d1cc5",
       "local_dir": "models/deepseek-moe-16b-base",
       "expected_weight_bytes": 32752135032,
       "expected_shards": 7,
       "expected_moe_layers": 27,
-      "expected_experts": 64
+      "expected_experts": 64,
+      "shards": [
+        {"name": "model-00001-of-00007.safetensors", "bytes": 4996067952, "sha256": "90b014e0c17f625e69057e97a7e7854e157f5213ba6e422f1bbbb4acf73b6ef1"},
+        {"name": "model-00002-of-00007.safetensors", "bytes": 4997398120, "sha256": "a35ec5893767f38413ebbeb71d161293a26af0d4bdcfe8933d646b047b15e4a5"},
+        {"name": "model-00003-of-00007.safetensors", "bytes": 4996079584, "sha256": "c2c65b9540872d11d0b50accc05163e8eabcf385186122d02d58aa3c2c42b1ea"},
+        {"name": "model-00004-of-00007.safetensors", "bytes": 4997128672, "sha256": "5fce5415ba1bbbc5fe7dcb5a8f4c8e9aba55daaed9ecef7f9a728e73eaf407b4"},
+        {"name": "model-00005-of-00007.safetensors", "bytes": 4997128672, "sha256": "d7da53a8b5f088c14ca9765f3ce92da06392281c5f4cc75b1a76f403af6950f2"},
+        {"name": "model-00006-of-00007.safetensors", "bytes": 4997398984, "sha256": "89dc70cfd1fb49d07e0914d62693cb66875b9526103b72f37b122f4931bb1722"},
+        {"name": "model-00007-of-00007.safetensors", "bytes": 2770933048, "sha256": "8f9373cf2861f95f7dd5448b120c47c2b18f722931fed885690dfbdc7d236728"}
+      ]
     },
     {
       "name": "Qwen1.5-MoE-A2.7B",
       "repo_id": "Qwen/Qwen1.5-MoE-A2.7B",
       "revision": "1a758c50ecb6350748b9ce0a99d2352fd9fc11c9",
+      "modelscope_repo_id": "Qwen/Qwen1.5-MoE-A2.7B",
+      "modelscope_revision": "7337ca53ea80605e91c9ca085138ec740a08ab8e",
       "local_dir": "models/Qwen1.5-MoE-A2.7B",
       "expected_weight_bytes": 28632144944,
       "expected_shards": 8,
       "expected_moe_layers": 24,
-      "expected_experts": 60
+      "expected_experts": 60,
+      "shards": [
+        {"name": "model-00001-of-00008.safetensors", "bytes": 3999614664, "sha256": "44f12f5b3d4e8eebeb55fa733e9dbbd7e119c9bf1502251638223e0dc2a926f0"},
+        {"name": "model-00002-of-00008.safetensors", "bytes": 3999385424, "sha256": "20a99873170c32cd91b489a10ab9408ca73d3f20cf5f57370cf31699aaf2d266"},
+        {"name": "model-00003-of-00008.safetensors", "bytes": 3988628968, "sha256": "e0b7cd920fc98f99e1d83ea856e73f451029ed16dba7ff83b4b839e77ba2d229"},
+        {"name": "model-00004-of-00008.safetensors", "bytes": 3999386088, "sha256": "e2be2af186e5c042e2246947d13640df5bd4ed59512932573996aca155b8e9a9"},
+        {"name": "model-00005-of-00008.safetensors", "bytes": 3988629648, "sha256": "3b75e01d4df9de74823e146a2c1e8826c80f838dcc7d1bd3bf376b68b8a527da"},
+        {"name": "model-00006-of-00008.safetensors", "bytes": 3999386104, "sha256": "c2fc223a88189b3950a4b737fe4c75ae40f792f2e7b30df159afe3cf392589d3"},
+        {"name": "model-00007-of-00008.safetensors", "bytes": 3988629648, "sha256": "88b206c85ee08b9704d2ddb5dcf15b91e5d750884c767c29a93fc91781cb7267"},
+        {"name": "model-00008-of-00008.safetensors", "bytes": 668484400, "sha256": "996c5057f123db509d3c40c97d6e65dac35eb9ffc71f3ac324a0a531da43e112"}
+      ]
     }
   ]
 }

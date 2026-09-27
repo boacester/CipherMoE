@@ -1,0 +1,22 @@
+{
+  "generated_utc": "2026-09-27T07:02:05.132199+00:00",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8592V",
+  "openfhe_version": "v1.5.1 / 1306d14f8c26bb6150d3e6ad54f28dfe1007689e",
+  "security": "STD128, GINX, HEStd_128_classic ring parameter selection",
+  "omp_threads": 1,
+  "timeout_seconds_per_case": 360,
+  "memory_limit_gib_per_case": 32,
+  "cases": [
+    "2:fused:8:2",
+    "2:negacyclic:8:2",
+    "2:cmux:8:2",
+    "4:fused:16:2",
+    "4:negacyclic:16:2",
+    "4:cmux:4:2",
+    "8:fused:8:2",
+    "8:cmux:4:1",
+    "16:cmux:4:1",
+    "32:cmux:4:1",
+    "64:cmux:4:1"
+  ]
+}

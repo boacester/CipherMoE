@@ -1,0 +1,27 @@
+{
+  "n": 4,
+  "method": "cmux",
+  "p": 4,
+  "q": 2048,
+  "ring_dim": 2048,
+  "id_bits": 2,
+  "x_bits": 2,
+  "output_modulus": 16,
+  "lut_entries": 0,
+  "lut_bytes": 0,
+  "evaluation_key_bytes": 4972939418,
+  "keygen_ms": 50583.846087,
+  "preprocessing_ms": 0.000885,
+  "encryption_ms": 1.316435,
+  "decryption_ms": 0.236676,
+  "online_ms": [
+    14508.788904,
+    14528.121656
+  ],
+  "median_ms": 14518.455279999998,
+  "peak_rss_kib": 4947396,
+  "verified": 6,
+  "failures": 0,
+  "pbs_per_eval": 36,
+  "cmux_calls_per_eval": 12
+}

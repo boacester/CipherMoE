@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-27",
+  "tfhe_commit": "079f46d08ffb8763de54b7794e850ddbd98fe63b",
+  "parameter": "V1_8_PARAM_MESSAGE_3_CARRY_3_KS_PBS_GAUSSIAN_2M128",
+  "threads": 1,
+  "timeout_s": 600,
+  "memory_gib": 32,
+  "repeats": 3,
+  "cases": [
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      8,
+      2
+    ]
+  ]
+}
