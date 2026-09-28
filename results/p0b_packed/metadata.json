@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-27",
+  "tfhe_commit": "079f46d08ffb8763de54b7794e850ddbd98fe63b",
+  "parameter": "V1_8_PARAM_MESSAGE_3_CARRY_3_KS_PBS_GAUSSIAN_2M128",
+  "expert_counts": [2, 8, 64],
+  "vector_sizes": [1, 8, 32, 64, 128, 256, 512],
+  "timed_repeats": 2,
+  "dense_stride": 1,
+  "dense_margin": 0,
+  "guarded_layouts": {
+    "n2": {"stride": 32, "margin": 32, "outputs_per_rotation": 126},
+    "n8": {"stride": 32, "margin": 32, "outputs_per_rotation": 30},
+    "n64": {"stride": 8, "margin": 16, "outputs_per_rotation": 12}
+  },
+  "wide_n64_short_scan": {"stride": 32, "margin": 32, "max_m": 32},
+  "input": "single encrypted expert ID encoded in an N-value torus domain",
+  "weights": "deterministic independently varying public unsigned 4-bit vectors",
+  "output": "m separately extracted shortint LWE ciphertexts",
+  "rayon_num_threads_override": null
+}

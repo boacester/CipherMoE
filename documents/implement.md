@@ -100,6 +100,17 @@ scheme switching 或其他可复用的 encrypted-control 表示。
 其他 packed RLWE/GLWE 或 CKKS 兼容的 encrypted-control 构造；
 在验证新表示前暂缓 P1/P2 和完整 MoE 集成。
 
+2026-09-27 完成 P0b：直接在单个 GLWE accumulator 中按 expert 分块编码
+公开 4-bit 向量，复用 TFHE-rs 的一次 blind rotation + 多次 sample extraction。
+采用真正的 `N` 值 selector torus 编码后，`m=512` 时 `N=2` 实测
+5 次 BR / 1.06 秒，`N=8` 为 18 次 BR / 3.56 秒，两者本次穷举受检
+expert 的输出零错误；`N=64` 的无保护 4 次 BR 布局和 8-coefficient
+间隔 43 次 BR 布局均产生大量错误。更宽间隔在 `N=64,m<=32` 的
+短测中每次 BR 只能容纳两个输出，向 512 输出扩展需 256 次 BR
+（容量推算，未测速/验收）。因此 **64 experts 的 1--8 BR 目标在当前
+参数/packing 下 no-go**；不基于错误的低 BR 数据进入 dot product
+或矩阵阶段。详情与有限样本正确性口径见 `results/p0b_packed/report.md`。
+
 ## 4. 分阶段实现与验证
 
 每个阶段结束都生成独立的 `results/stage_*/report.md`，报告通过项、失败项、原始配置、复现
